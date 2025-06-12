@@ -165,7 +165,7 @@ python grey_correlation_analysis.py
 - 所有数据文件采用CSV格式，使用UTF-8编码
 
 ### 2. 可视化结果
-- 图表保存在各脚本所在目录的 `figures/` 文件夹
+- 部分图表保存在各脚本所在目录的 `figures/` 文件夹
 - 支持多种格式：PDF（用于论文）、PNG（用于网页）、SVG（用于矢量图）
 - 图表分辨率：300dpi，适合出版要求
 
