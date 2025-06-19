@@ -203,18 +203,18 @@ plt.rcParams.update({
 colors = ['#4C72B0',  # 柔和的蓝色
           '#55A868',  # 柔和的绿色
           '#C44E52',  # 柔和的红色
-          '#8172B3']  # 柔和的紫色
+          '#CCB974']  # 柔和的黄色（用于Stability Weighted）
 
 # 图1：所有方法的对比
 plt.figure(figsize=(8, 6))
 x = np.arange(len(cities))
-width = 0.2
+width = 0.2  # 恢复宽度以适应4个柱子
 
-# 绘制柱状图
+# 绘制柱状图（去掉Comprehensive）
 bars1 = plt.bar(x - 1.5*width, results['Mean_AQI'], width, label='Mean AQI', color=colors[0])
 bars2 = plt.bar(x - 0.5*width, results['Quantile_Weighted'], width, label='Quantile Weighted', color=colors[1])
 bars3 = plt.bar(x + 0.5*width, results['Exceedance_Weighted'], width, label='Exceedance Weighted', color=colors[2])
-bars4 = plt.bar(x + 1.5*width, results['Comprehensive'], width, label='Comprehensive', color=colors[3])
+bars4 = plt.bar(x + 1.5*width, results['Stability_Weighted'], width, label='Stability Weighted', color=colors[3])
 
 # 设置样式
 plt.xlabel('Cities', fontsize=11)
@@ -239,7 +239,7 @@ plt.figure(figsize=(5, 3))  # 调整图形尺寸
 y_pos = np.arange(len(cities))
 
 # 绘制水平条形图
-bars = plt.barh(y_pos, results['Comprehensive'], color=colors[3], height=0.6)  # 调整条形图高度
+bars = plt.barh(y_pos, results['Comprehensive'], color='#8172B3', height=0.6)  # 调整条形图高度
 plt.yticks(y_pos, [f'City {city}' for city in cities])
 plt.xlabel('Comprehensive Score', fontsize=11)
 plt.title('Comprehensive AQI Ranking', pad=15, fontsize=12)
